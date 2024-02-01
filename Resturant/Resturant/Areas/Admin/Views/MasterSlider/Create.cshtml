@@ -1,0 +1,68 @@
+﻿@model Resturant.ViewModels.MasterSliderModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="pagetitle">
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-action="Index" asp-controller="Home">Home</a></li>
+            <a class="breadcrumb-item" asp-action="Index" asp-controller="MasterSlider">Master Slider</a>
+            <a class="breadcrumb-item active" asp-action="Create" asp-controller="MasterSlider">Create</a>
+        </ol>
+    </nav>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <div class="col-md-12">
+            <form asp-action="Create" class="row g-3 mt-3" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="MasterSliderTitle" class="control-label"></label>
+                            <input asp-for="MasterSliderTitle" class="form-control" />
+                            <span asp-validation-for="MasterSliderTitle" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="MasterSliderUrl" class="control-label"></label>
+                            <input asp-for="File" class="form-control" />
+                            <span asp-validation-for="MasterSliderUrl" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="MasterSliderBreef" class="control-label"></label>
+                            <textarea asp-for="MasterSliderBreef" class="form-control" maxlength="250"></textarea>
+                            <span asp-validation-for="MasterSliderBreef" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="MasterSliderDesc" class="control-label"></label>
+                            <textarea asp-for="MasterSliderDesc" class="form-control" maxlength="250"></textarea>
+                            <span asp-validation-for="MasterSliderDesc" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group text-end">
+                    <a asp-action="Index" class="btn btn-success">Back to List</a>
+
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+
+

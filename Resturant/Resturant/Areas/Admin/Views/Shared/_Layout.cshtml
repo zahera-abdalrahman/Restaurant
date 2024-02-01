@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <meta name="robots" content="noindex, nofollow">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="~/Admin/assets/img/favicon.png" rel="icon">
+    <link href="~/Admin/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/Admin/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Admin/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/Admin/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/Admin/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="~/Admin/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="~/Admin/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/Admin/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <!-- Jquery -->
+    <script src="~/jquery/jquery.js"></script>
+    <script src="~/jquery-validate/jquery.validate.js"></script>
+    <script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="~/Admin/assets/css/style.css" rel="stylesheet">
+    <link href="~/Admin/assets/css/input.css" rel="stylesheet" />
+    <style>
+        .font-size {
+            font-size: 16px !important;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center">
+                <img src="~/Admin/assets/img/logo.png" alt="">
+                <span class="d-none d-lg-block">Admin</span>
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div><!-- End Logo -->
+
+
+        
+
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+                <li class="nav-item dropdown pe-3">
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <span class="d-none d-md-block dropdown-toggle ps-2">@User.Identity.Name</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" asp-controller="Account" asp-action="Logout">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Log Out</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </nav>
+
+    </header><!-- End Header -->
+
+
+
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+
+
+         
+            <li class="nav-item">
+                <a class="nav-link " asp-action="Index" asp-controller="Home">
+                    <i class="bx bx-home font-size"></i>
+                    <span>Home</span>
+                </a>
+            </li><!-- Home -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#Transactions-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-menu-button-wide"></i><span>Transactions</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="Transactions-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">        
+                    <li>
+                        <a asp-action="Index" asp-controller="TransactionContactUs">
+                            <i class="bx bxs-contact font-size"></i><span>Contact Us</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a asp-action="Index" asp-controller="TransactionBookTable">
+                            <i class="bx bx-table font-size"></i><span>Book Table</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a asp-action="Index" asp-controller="TransactionNewsletter">
+                            <i class="bx bx-news font-size"></i><span>News letter</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li><!--Transaction -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#Home-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-journal-text"></i><span>Home</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="Home-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a asp-action="Index" asp-controller="SystemSetting">
+                            <i class="ri-settings-2-fill font-size"></i><span>System Setting</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-action="Index" asp-controller="MasterAbout">
+                            <i class="ri-file-info-fill font-size"></i>
+                            <span>About</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-action="Index" asp-controller="MasterMenu">
+                            <i class="bx bx-menu font-size"></i><span>Menu</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a asp-action="Index" asp-controller="MasterPartner">
+                            <i class="bi bi-person-badge font-size"></i><span>Partner</span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a asp-action="Index" asp-controller="MasterSocialMedium">
+                            <i class="bx bx-customize font-size"></i><span>Social Media</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-action="Index" asp-controller="MasterWorkingHour">
+                            <i class="bi bi-clock-fill font-size"></i><span>Working Hour</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-action="Index" asp-controller="MasterContactUsInformation">
+                            <i class="bx bxs-contact font-size"></i><span>ContactUs Information</span>
+                        </a>
+                    </li>
+                   
+                 
+
+                    <li>
+                        <a asp-action="Index" asp-controller="MasterOffer">
+                            <i class="bx bxs-offer font-size"></i><span>Offer</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-action="Index" asp-controller="MasterSlider">
+                            <i class="bx bx-slideshow font-size"></i><span>Slider</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-action="Index" asp-controller="Customer">
+                            <i class="bi bi-person-badge font-size"></i><span>Customer</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-action="Index" asp-controller="MasterService">
+                            <i class="ri-service-fill font-size"></i><span>Service</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-action="Index" asp-controller="MasterCategoryMenu">
+                            <i class="bx bx-category font-size"></i><span>Category Menu</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-action="Index" asp-controller="MasterItemMenu">
+                            <i class="bx bx-food-menu font-size"></i><span>Item Menu</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" asp-action="ListUsers" asp-controller="Account">
+                            <i class="bi-file-person-fill font-size"></i>
+                            <span>Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" asp-action="Login" asp-controller="Account">
+                            <i class="bi bi-box-arrow-in-right font-size"></i>
+                            <span>Login</span>
+                        </a>
+                    </li>
+                </ul>
+
+            </li><!-- Pages-->        
+        </ul>
+
+    </aside>
+
+
+
+    <main id="main" class="main">
+        @RenderBody()
+    </main>
+
+
+    
+    <!-- Vendor JS Files -->
+    <script src="~/Admin/assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="~/Admin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Admin/assets/vendor/chart.js/chart.min.js"></script>
+    <script src="~/Admin/assets/vendor/echarts/echarts.min.js"></script>
+    <script src="~/Admin/assets/vendor/quill/quill.min.js"></script>
+    <script src="~/Admin/assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="~/Admin/assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="~/Admin/assets/vendor/php-email-form/validate.js"></script>01
+    <script src="~/Admin/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+﻿@model Resturant.ViewModels.MasterAboutModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="pagetitle">
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-action="Index" asp-controller="Home">Home</a></li>
+            <a class="breadcrumb-item" asp-action="Index" asp-controller="MasterAbout">Master About</a>
+            <a class="breadcrumb-item active" asp-action="Edit" asp-controller="MasterAbout">Edit</a>
+        </ol>
+    </nav>
+</div>
+<div class="card">
+    <div class="card-body">
+        <div class="col-md-12">
+            <form asp-action="Edit" class="mt-3" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="MasterAboutId" />
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="MasterAboutUrl" class="control-label"></label>
+                            <input asp-for="MasterAboutUrl" class="form-control" />
+                            <span asp-validation-for="MasterAboutUrl" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="MasterAboutImageUrl" class="control-label"></label>
+                            <input asp-for="File" type="file" class="form-control" />
+                            <span asp-validation-for="MasterAboutImageUrl" class="text-danger"></span>
+                            <input asp-for="MasterAboutImageUrl" type="hidden" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MasterAboutTitle" class="control-label"></label>
+                    <input asp-for="MasterAboutTitle" class="form-control" />
+                    <span asp-validation-for="MasterAboutTitle" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MasterAboutBrief" class="control-label"></label>
+                    <textarea asp-for="MasterAboutBrief" class="form-control" maxlength="250"></textarea>
+                    <span asp-validation-for="MasterAboutBrief" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MasterAboutDesc" class="control-label"></label>
+                    <textarea asp-for="MasterAboutDesc" class="form-control" maxlength="250"></textarea>
+                    <span asp-validation-for="MasterAboutDesc" class="text-danger"></span>
+                </div>
+
+
+                <div class="form-group text-end">
+                    <a asp-action="Index" class="btn btn-success">Back to List</a>
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,55 @@
+﻿@model Resturant.ViewModels.MasterContactUsInformationModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<div class="pagetitle">
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-action="Index" asp-controller="Home">Home</a></li>
+            <a class="breadcrumb-item" asp-action="Index" asp-controller="MasterContactUsInformation">Master ContactUs Information</a>
+            <a class="breadcrumb-item active" asp-action="Edit" asp-controller="MasterContactUsInformation">Edit</a>
+        </ol>
+    </nav>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <div class="col-md-12">
+            <form asp-action="Edit" class="mt-3" >
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="MasterContactUsInformationId" />
+
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="MasterContactUsInformationImageUrl" class="control-label"></label>
+                            <input asp-for="MasterContactUsInformationImageUrl" class="form-control" />
+                            <span asp-validation-for="MasterContactUsInformationImageUrl" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group ">
+                            <label asp-for="MasterContactUsInformationRedirect" class="control-label"></label>
+                            <input asp-for="MasterContactUsInformationRedirect" class="form-control" />
+                            <span asp-validation-for="MasterContactUsInformationRedirect" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label asp-for="MasterContactUsInformationIdesc" class="control-label mt-3"></label>
+                    <textarea asp-for="MasterContactUsInformationIdesc" class="form-control" maxlength="250"></textarea>
+                    <span asp-validation-for="MasterContactUsInformationIdesc" class="text-danger"></span>
+                </div>
+                <div class="text-end ">
+                    <a asp-action="Index" class="btn btn-success">Back to List</a>
+
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+               
+            </form>
+        </div>
+       
+    </div>
+</div>
+

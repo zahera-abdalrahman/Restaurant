@@ -1,0 +1,58 @@
+﻿@model Resturant.ViewModels.MasterSocialMediumModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="pagetitle">
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-action="Index" asp-controller="Home">Home</a></li>
+            <a class="breadcrumb-item" asp-action="Index" asp-controller="MasterSocialMedium">Master Social Media</a>
+            <a class="breadcrumb-item active" asp-action="Edit" asp-controller="MasterSocialMedium">Edit</a>
+        </ol>
+    </nav>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <div class="col-md-12">
+            <form asp-action="Edit" class="mt-3">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="MasterSocialMediumId" />
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="MasterSocialMediumImageUrl" class="control-label"></label>
+                            <input asp-for="MasterSocialMediumImageUrl" class="form-control" />
+                            <span asp-validation-for="MasterSocialMediumImageUrl" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="MasterSocialMediumUrl" class="control-label"></label>
+                            <input asp-for="MasterSocialMediumUrl" class="form-control" />
+                            <span asp-validation-for="MasterSocialMediumUrl" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="MasterSocialMediumName" class="control-label"></label>
+                            <input asp-for="MasterSocialMediumName" class="form-control" />
+                            <span asp-validation-for="MasterSocialMediumName" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-end">
+                    <a asp-action="Index" class="btn btn-success">Back to List</a>
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

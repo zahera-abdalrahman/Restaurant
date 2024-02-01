@@ -1,0 +1,52 @@
+﻿@model Resturant.ViewModels.TransactionContactUsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="pagetitle">
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-action="Index" asp-controller="Home">Home</a></li>
+            <a class="breadcrumb-item" asp-action="Index" asp-controller="TransactionContactUs">Transaction ContactUs</a>
+            <a class="breadcrumb-item active" asp-action="Details" asp-controller="TransactionContactUs">Details</a>
+        </ol>
+    </nav>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="mt-3">
+            <dt class="col-sm-12">
+                @Html.DisplayNameFor(model => model.TransactionContactUsFullName)
+            </dt>
+            <dd class="col-sm-12">
+                @Html.DisplayFor(model => model.TransactionContactUsFullName)
+            </dd>
+            <dt class="col-sm-12">
+                @Html.DisplayNameFor(model => model.TransactionContactUsEmail)
+            </dt>
+            <dd class="col-sm-12">
+                @Html.DisplayFor(model => model.TransactionContactUsEmail)
+            </dd>
+            <dt class="col-sm-12">
+                @Html.DisplayNameFor(model => model.TransactionContactUsSubject)
+            </dt>
+            <dd class="col-sm-12">
+                @Html.DisplayFor(model => model.TransactionContactUsSubject)
+            </dd>
+            <dt class="col-sm-12">
+                @Html.DisplayNameFor(model => model.TransactionContactUsMessage)
+            </dt>
+            <dd class="col-sm-12">
+                @Html.DisplayFor(model => model.TransactionContactUsMessage)
+            </dd>
+            <div class="text-end">
+                <a asp-action="Index" class="btn btn-success">Back to List</a>
+
+                <a asp-action="Edit" asp-route-id="@Model.TransactionContactUsId" class="btn btn-primary ">Edit</a>
+            </div>
+
+        </dl>
+    </div>
+</div>

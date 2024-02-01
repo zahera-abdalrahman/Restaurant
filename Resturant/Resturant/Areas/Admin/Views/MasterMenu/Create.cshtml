@@ -1,0 +1,54 @@
+﻿@model Resturant.ViewModels.MasterMenuModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="pagetitle">
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-action="Index" asp-controller="Home">Home</a></li>
+            <a class="breadcrumb-item" asp-action="Index" asp-controller="MasterMenu">Master Menu</a>
+            <a class="breadcrumb-item active" asp-action="Create" asp-controller="MasterMenu">Create</a>
+        </ol>
+    </nav>
+</div>
+
+
+
+<div class="card">
+    <div class="card-body">
+        <div class="col-md-12">
+            <form asp-action="Create" class="row g-3 mt-3">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="MasterMenuName" class="control-label"></label>
+                            <input asp-for="MasterMenuName" class="form-control" />
+                            <span asp-validation-for="MasterMenuName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="MasterMenuUrl" class="control-label"></label>
+                            <input asp-for="MasterMenuUrl" class="form-control" />
+                            <span asp-validation-for="MasterMenuUrl" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-end">
+                    <a asp-action="Index" class="btn btn-success">Back to List</a>
+
+                    <input type="submit" value="Create" class="btn btn-primary " />
+                </div>
+
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+

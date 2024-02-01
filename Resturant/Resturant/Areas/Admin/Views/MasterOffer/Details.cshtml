@@ -1,0 +1,56 @@
+﻿@model Resturant.ViewModels.MasterOfferModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="pagetitle">
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-action="Index" asp-controller="Home">Home</a></li>
+            <a class="breadcrumb-item" asp-action="Index" asp-controller="MasterOffer">Master Offer</a>
+            <a class="breadcrumb-item active" asp-action="Details" asp-controller="MasterOffer">Details</a>
+
+        </ol>
+    </nav>
+</div>
+
+
+<div class="card">
+    <div class="card-body">
+
+        <dl class="mt-3">
+            <dt class="col-sm-12">
+                @Html.DisplayNameFor(model => model.MasterOfferTitle)
+            </dt>
+            <dd class="col-sm-12">
+                @Html.DisplayFor(model => model.MasterOfferTitle)
+            </dd>
+            <dt class="col-sm-12">
+                @Html.DisplayNameFor(model => model.MasterOfferBreef)
+            </dt>
+            <dd class="col-sm-12">
+                @Html.DisplayFor(model => model.MasterOfferBreef)
+            </dd>
+            <dt class="col-sm-12">
+                @Html.DisplayNameFor(model => model.MasterOfferDesc)
+            </dt>
+            <dd class="col-sm-12">
+                @Html.DisplayFor(model => model.MasterOfferDesc)
+            </dd>
+            <dt class="col-sm-12">
+                @Html.DisplayNameFor(model => model.MasterOfferImageUrl)
+            </dt>
+            <dd class="col-sm-12">
+                <img src="~/images/@Model.MasterOfferImageUrl" style="max-width:60px" />
+            </dd>
+            <div class="text-end">
+                <a asp-action="Index" class="btn btn-success">Back to List</a>
+
+                <a asp-action="Edit" asp-route-id="@Model.MasterOfferId" class="btn btn-primary">Edit</a>
+            </div>
+
+        </dl>
+    </div>
+</div>
+

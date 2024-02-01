@@ -1,0 +1,101 @@
+﻿@model Resturant.ViewModels.SystemSettingModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="pagetitle">
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-action="Index" asp-controller="Home">Home</a></li>
+            <a class="breadcrumb-item" asp-action="Index" asp-controller="SystemSetting">System Setting</a>
+            <a class="breadcrumb-item active" asp-action="Details" asp-controller="SystemSetting">Details</a>
+        </ol>
+    </nav>
+</div>
+
+
+<div class="card">
+    <div class="card-body">
+        <dl class="mt-3">
+            <dt class="col-sm-12">
+                @Html.DisplayNameFor(model => model.SystemSettingLogoImageUrl)
+            </dt>
+            <dd class="col-sm-12">
+                <img src="~/images/SystemSitting/@Model.SystemSettingLogoImageUrl" style="max-width:65px" />
+            </dd>
+            <dt class="col-sm-12">
+                @Html.DisplayNameFor(model => model.SystemSettingLogoImageUrl2)
+            </dt>
+            <dd class="col-sm-12">
+                <img src="~/images/SystemSitting/@Model.SystemSettingLogoImageUrl2" style="max-width:65px" />
+            </dd>
+            <dt class="col-sm-12">
+                @Html.DisplayNameFor(model => model.SystemSettingCopyright)
+            </dt>
+            <dd class="col-sm-12">
+                @Html.DisplayFor(model => model.SystemSettingCopyright)
+            </dd>
+            <dt class="col-sm-12">
+                @Html.DisplayNameFor(model => model.SystemSettingWelcomeNoteTitle)
+            </dt>
+            <dd class="col-sm-12">
+                @Html.DisplayFor(model => model.SystemSettingWelcomeNoteTitle)
+            </dd>
+            <dt class="col-sm-12">
+                @Html.DisplayNameFor(model => model.SystemSettingWelcomeNoteBreef)
+            </dt>
+            <dd class="col-sm-12">
+                @Html.DisplayFor(model => model.SystemSettingWelcomeNoteBreef)
+            </dd>
+            <dt class="col-sm-12">
+                @Html.DisplayNameFor(model => model.SystemSettingWelcomeNoteDesc)
+            </dt>
+            <dd class="col-sm-12">
+                @Html.DisplayFor(model => model.SystemSettingWelcomeNoteDesc)
+            </dd>
+            <dt class="col-sm-12">
+                @Html.DisplayNameFor(model => model.SystemSettingWelcomeNoteUrl)
+            </dt>
+            <dd class="col-sm-12">
+                @Html.DisplayFor(model => model.SystemSettingWelcomeNoteUrl)
+            </dd>
+            <dt class="col-sm-12">
+                @Html.DisplayNameFor(model => model.SystemSettingMapLocation)
+            </dt>
+            <dd class="col-sm-12">
+                @Html.DisplayFor(model => model.SystemSettingMapLocation)
+            </dd>
+            <dt class="col-sm-12">
+                @Html.DisplayNameFor(model => model.SystemSettingWelcomeNoteImageUrl)
+            </dt>
+            <dd class="col-sm-12">
+                <img src="~/images/SystemSitting/@Model.SystemSettingWelcomeNoteImageUrl" style="max-width:65px">
+            </dd>
+            <dt class="col-sm-12">
+                @Html.DisplayNameFor(model => model.SystemSettingWelcomeNoteImageUrl2)
+            </dt>
+            <dd class="col-sm-12">
+                <img src="~/images/SystemSitting/@Model.SystemSettingWelcomeNoteImageUrl2" style="max-width:65px">
+            </dd>
+              <dt class="col-sm-12">
+                @Html.DisplayNameFor(model => model.SystemSettingWelcomeNoteImageUrl3)
+            </dt>
+            <dd class="col-sm-12">
+                <img src="~/images/SystemSitting/@Model.SystemSettingWelcomeNoteImageUrl3" style="max-width:65px">
+            </dd>
+            <dt class="col-sm-12">
+                @Html.DisplayNameFor(model => model.SystemSettingWelcomeNoteImageUrl4)
+            </dt>
+            <dd class="col-sm-12">
+                <img src="~/images/SystemSitting/@Model.SystemSettingWelcomeNoteImageUrl4" style="max-width:65px">
+            </dd>
+            <div class="text-end">
+                <a asp-action="Index" class="btn btn-success">Back to List</a>
+
+                <a asp-action="Edit" asp-route-id="@Model.SystemSettingId" class="btn btn-primary ">Edit</a>
+            </div>
+        </dl>
+    </div>
+</div>
+

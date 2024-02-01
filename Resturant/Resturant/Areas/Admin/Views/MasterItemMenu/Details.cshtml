@@ -1,0 +1,71 @@
+﻿@model Resturant.ViewModels.MasterItemMenuModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="pagetitle">
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-action="Index" asp-controller="Home">Home</a></li>
+            <a class="breadcrumb-item" asp-action="Index" asp-controller="MasterItemMenu">Master Item Menu</a>
+            <a class="breadcrumb-item active" asp-action="Details" asp-controller="MasterItemMenu">Details</a>
+
+        </ol>
+    </nav>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row mt-3">
+            <dt class="col-sm-12">
+                @Html.DisplayNameFor(model => model.MasterItemMenuTitle)
+            </dt>
+            <dd class="col-sm-12">
+                @Html.DisplayFor(model => model.MasterItemMenuTitle)
+            </dd>
+            <dt class="col-sm-12">
+                @Html.DisplayNameFor(model => model.MasterItemMenuBreef)
+            </dt>
+            <dd class="col-sm-12">
+                @Html.DisplayFor(model => model.MasterItemMenuBreef)
+            </dd>
+            <dt class="col-sm-12">
+                @Html.DisplayNameFor(model => model.MasterItemMenuDesc)
+            </dt>
+            <dd class="col-sm-12">
+                @Html.DisplayFor(model => model.MasterItemMenuDesc)
+            </dd>
+            <dt class="col-sm-12">
+                @Html.DisplayNameFor(model => model.MasterItemMenuPrice)
+            </dt>
+            <dd class="col-sm-12">
+                @Html.DisplayFor(model => model.MasterItemMenuPrice)
+            </dd>
+            <dt class="col-sm-12">
+                @Html.DisplayNameFor(model => model.MasterItemMenuImageUrl)
+            </dt>
+            <dd class="col-sm-12">
+                <img src="~/images/@Model.MasterItemMenuImageUrl" style="max-width:60px" />
+            </dd>
+            <dt class="col-sm-12">
+                @Html.DisplayNameFor(model => model.MasterItemMenuDate)
+            </dt>
+            <dd class="col-sm-12">
+                @Html.DisplayFor(model => model.MasterItemMenuDate)
+            </dd>
+            <dt class="col-sm-12">
+                @Html.DisplayNameFor(model => model.MasterCategoryMenu)
+            </dt>
+            <dd class="col-sm-12">
+                @Html.DisplayFor(model => model.MasterCategoryMenu.MasterCategoryMenuName)
+            </dd>
+            <div class="text-end">
+                <a asp-action="Index" class="btn btn-success">Back to List</a>
+
+                <a asp-action="Edit" asp-route-id="@Model.MasterItemMenuId" class="btn btn-primary ">Edit</a> 
+            </div>
+
+        </dl>
+    </div>
+</div>

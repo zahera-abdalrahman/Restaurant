@@ -1,0 +1,63 @@
+﻿@model Resturant.ViewModels.CustomerModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="pagetitle">
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-action="Index" asp-controller="Home">Home</a></li>
+            <a class="breadcrumb-item" asp-action="Index" asp-controller="Customer">Customer</a>
+            <a class="breadcrumb-item active" asp-action="Edit" asp-controller="Customer">Edit</a>
+        </ol>
+    </nav>
+</div>
+<div class="card">
+    <div class="card-body">
+        <div class="col-md-12">
+            <form asp-action="Edit" class="mt-3" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="CustomerId" />
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="CustomerName" class="control-label"></label>
+                            <input asp-for="CustomerName" class="form-control" />
+                            <span asp-validation-for="CustomerName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="CustomerPosition" class="control-label"></label>
+                            <input asp-for="CustomerPosition" class="form-control" />
+                            <span asp-validation-for="CustomerPosition" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+               
+                        <div class="form-group">
+                            <label asp-for="CustomerImage" class="control-label"></label>
+                            <input asp-for="File" class="form-control" />
+                            <span asp-validation-for="CustomerImage" class="text-danger"></span>
+                    <input asp-for="CustomerImage" type="hidden" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="CustomerDesc" class="control-label"></label>
+                            <textarea asp-for="CustomerDesc" class="form-control" maxlength="350"></textarea>
+                            <span asp-validation-for="CustomerDesc" class="text-danger"></span>
+                        </div>
+                
+                <div class="form-group text-end">
+                    <a asp-action="Index" class="btn btn-success">Back to List</a>
+
+                    <input type="submit" value="Save" class="btn btn-primary" />
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+

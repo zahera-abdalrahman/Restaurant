@@ -1,0 +1,117 @@
+﻿@model IEnumerable<Resturant.ViewModels.SystemSettingModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="pagetitle">
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-action="Index" asp-controller="Home">Home</a></li>
+            <a class="breadcrumb-item active" asp-action="Index" asp-controller="SystemSetting">System Setting</a>
+        </ol>
+    </nav>
+</div>
+<p class=" text-end me-2">
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+<section class="section">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                  
+                    <table class="table datatable table-hover">
+                        <thead class="blue">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.SystemSettingId)
+                                </th>                                                                                                                                     
+                                <th>
+                                    @Html.DisplayNameFor(model => model.SystemSettingWelcomeNoteTitle)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.SystemSettingWelcomeNoteImageUrl)
+                                </th>
+                                <th class="text-center">
+                                    Operations
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SystemSettingId)
+                                    </td>
+                                    <td class="overflow-hidden">
+                                        @Html.DisplayFor(modelItem => item.SystemSettingWelcomeNoteTitle)
+                                    </td>
+                                    <td>
+                                        <img src="~/images/SystemSitting/@item.SystemSettingWelcomeNoteImageUrl" style="max-width:65px">
+                                    </td>
+                                    <td class="align-middle text-center">
+                                        <a asp-action="Edit" asp-route-id="@item.SystemSettingId" class="fs-4 "><i class="ri-edit-line rem"></i></a>
+                                        <a asp-action="Details" asp-route-id="@item.SystemSettingId" class="fs-4 "><i class="ri-file-list-2-line"></i></a>
+                                        <a href="#" class="btnSelectRow fs-4 text-danger" data-bs-toggle="modal" data-bs-target="#verticalycentered" data-path="@Url.ActionLink("Delete","SystemSetting",new {idDelete=item.SystemSettingId})"><i class="ri-delete-bin-5-line"></i></a>
+                                        @if (item.IsActive == true)
+                                        {
+                                            <a asp-action="Active" asp-route-id="@item.SystemSettingId" class="fs-4 text-success"><i class="ri-user-follow-fill"></i></a>
+                                        }
+                                        else
+                                        {
+                                            <a asp-action="Active" asp-route-id="@item.SystemSettingId" class="fs-4 text-danger"><i class="ri-user-unfollow-fill"></i></a>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                  
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<div class="modal fade" id="verticalycentered" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are You Shure You Want To Delete This?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close" id="btnClose">Close</button>
+                <input type="button" class="btn btn-danger" value="Delete" id="btnConfirmDelete">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<script>
+
+    var idRowDelete = "";
+    $(function () {
+    $(".btnSelectRow").click(function () {
+        idRowDelete = $(this).data("path");
+    });
+
+
+    $("#btnConfirmDelete").click(function () {
+        window.location = idRowDelete;
+        idRowDelete = "";
+    });
+    $("#btnClose").click(function () {
+
+        idRowDelete = "";
+    });
+    })
+</script>

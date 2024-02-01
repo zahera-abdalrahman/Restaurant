@@ -1,0 +1,59 @@
+﻿@model Resturant.ViewModels.CustomerModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="pagetitle">
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-action="Index" asp-controller="Home">Home</a></li>
+            <a class="breadcrumb-item" asp-action="Index" asp-controller="Customer">Customer</a>
+            <a class="breadcrumb-item active" asp-action="Create" asp-controller="Customer">Create</a>
+        </ol>
+    </nav>
+</div>
+<div class="card">
+    <div class="card-body">
+        <div class="col-md-12">
+            <form asp-action="Create" class="row g-3 mt-3" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="CustomerName" class="control-label"></label>
+                            <input asp-for="CustomerName" class="form-control" />
+                            <span asp-validation-for="CustomerName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="CustomerPosition" class="control-label"></label>
+                            <input asp-for="CustomerPosition" class="form-control" />
+                            <span asp-validation-for="CustomerPosition" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="CustomerImage" class="control-label"></label>
+                    <input asp-for="File" class="form-control" />
+                    <span asp-validation-for="CustomerImage" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CustomerDesc" class="control-label"></label>
+                    <textarea asp-for="CustomerDesc" class="form-control" maxlength="350"></textarea>
+                    <span asp-validation-for="CustomerDesc" class="text-danger"></span>
+                </div>
+
+                <div class="text-end">
+                    <a asp-action="Index" class="btn btn-success">Back to List</a>
+
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
